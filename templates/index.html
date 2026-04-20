@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+    <title>게시판</title>
+</head>
+<body>
+    <h1>게시글 목록</h1>
+    <a href="/create">글쓰기</a>
+    <table border="1" cellpadding="5">
+        <tr><th>번호</th><th>작성자</th><th>제목</th><th>작성일</th><th>관리</th></tr>
+        {% for row in posts %}
+        <tr>
+            <td>{{ row.num }}</td>
+            <td>{{ row.writer }}</td>
+            <td>{{ row.title }}</td>
+            <td>{{ row.created_at }}</td>
+            <td>
+                <a href="/edit/{{ row.num }}">수정</a>
+                <a href="/delete/{{ row.num }}">삭제</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

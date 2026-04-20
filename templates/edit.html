@@ -1,0 +1,18 @@
+<!doctype html>
+<html>
+<head>
+    <title>글 수정</title>
+</head>
+<body>
+<h1>글 수정</h1>
+<form method="post" action="/edit/{{ post.num }}">
+    <label>작성자: <input name="writer" value="{{ post.writer }}" required maxlength="50"></label><br>
+    <label>제목: <input name="title" value="{{ post.title }}" required maxlength="200"></label><br>
+    <label>내용:<br>
+        <textarea name="content" rows="5" cols="50" required>{{ post.content }}</textarea>
+    </label><br>
+    <button type="submit">수정하기</button>
+    <a href="/">목록</a>
+</form>
+</body>
+</html>

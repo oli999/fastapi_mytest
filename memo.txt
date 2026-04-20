@@ -1,0 +1,12 @@
+python -m venv venv
+
+.\venv\Scripts\activate
+
+pip install fastapi uvicorn sqlalchemy psycopg2-binary python-jose jinja2 python-multipart
+
+uvicorn main:app --reload
+uvicorn main:app --reload --host 0.0.0.0 --port 8000
+
+pip freeze > requirements.txt
+
+pip install -r requirements.txt
