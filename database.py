@@ -28,3 +28,5 @@ def get_db():
         yield db
     finally:
         db.close()
+
+# 1. 추가함
